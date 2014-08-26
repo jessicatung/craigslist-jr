@@ -6,6 +6,7 @@ class CreateArticles < ActiveRecord::Migration
       t.text :description
       t.string :category_name
       t.string :email
+      t.string :secret_key
       t.belongs_to :category
       t.timestamps
     end
