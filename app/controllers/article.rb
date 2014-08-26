@@ -1,14 +1,14 @@
 get '/articles/?' do
-  @articles = Article.all
+  @articles = Article.all.order("id ASC")
   erb :"articles/index"
 end
 
 get '/articles/new' do
-
   erb :"articles/new"
 end
 
-get '/articles/edit' do
+get '/articles/edit/:id' do
+  @article = Article.find(params[:id])
   erb :"articles/edit"
 end
 
