@@ -1,14 +1,18 @@
 <div class="container">
   <h1 id="new_article_title">Edit Article</h1>
+    <% if @url_key == @article.secret_key %>
   <form method="post" action="/articles/<%= @article.id %>">
     <input type="text" name="title" value="<%= @article.title %>">
     <input type="text" name="category_name" value="<%= @article.category_name %>">
     <input type="text" name="price" value="<%= @article.price %>">
     <textarea name="description"><%= @article.description %></textarea>
     <input type="text" name="email" value="<%= @article.email %>">
+    <br />
+    <br />
     <input type="hidden" name="_method" value="put">
-    <br />
-    <br />
     <button type="submit">Update Article</button>
   </form>
+  <% else %>
+  <h1>You don't have access to edit meee</h1>
+  <% end %>
 </div>
