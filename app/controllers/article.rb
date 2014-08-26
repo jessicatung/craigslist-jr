@@ -18,13 +18,14 @@ get '/articles/:id' do
 end
 
 post '/articles' do
-
-  # redirect
+  Article.create(title: params[:title], category_name: params[:category_name], price: params[:price], description: params[:description], email: params[:email])
+  redirect '/articles'
 end
 
 put '/articles/:id' do
-
-  # redirect
+  @article = Article.find(params[:id])
+  @article.update(title: params[:title], category_name: params[:category_name], price: params[:price], description: params[:description], email: params[:email])
+  redirect '/articles'
 end
 
 
