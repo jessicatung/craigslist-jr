@@ -29,5 +29,3 @@ put '/articles/:id' do
   @article.update(title: params[:title], category_name: params[:category_name], price: params[:price], description: params[:description], email: params[:email])
   redirect '/articles'
 end
-
-
