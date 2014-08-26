@@ -9,16 +9,18 @@ end
 
 get '/articles/edit/:id' do
   @article = Article.find(params[:id])
+  @url_key = params[:url_key]
   erb :"articles/edit"
 end
 
-get '/articles/:id' do
+get "/articles/:id" do
   @article = Article.find(params[:id])
   erb :"/articles/show"
 end
 
 post '/articles' do
-  Article.create(title: params[:title], category_name: params[:category_name], price: params[:price], description: params[:description], email: params[:email])
+  Article.create(title: params[:title], category_name: params[:category_name], price: params[:price], description: params[:description], email: params[:email], secret_key: rand(1..9) * 429)
+
   redirect '/articles'
 end
 
