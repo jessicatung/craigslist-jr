@@ -1,8 +1,11 @@
 get '/categories/?' do
-  "Categories Page"
+  @categories = Category.all
+  erb :"categories/index"
 end
 
 get '/categories/:id' do
-  "Individual Category Page"
+  @category = Category.find(params[:id])
+  @articles = @category.articles
+  erb :"categories/show"
 end
 
