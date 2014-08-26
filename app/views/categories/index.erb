@@ -1,0 +1,8 @@
+<div class="container">
+<h1>All Categories:</h1>
+<% @categories.each do |category| %>
+  <a href="/categories/<%=category.id%>" target="_blank" ><h4><%= category.id %>. <%= category.category_name %></h4></a>
+
+<% end %>
+
+</div>
