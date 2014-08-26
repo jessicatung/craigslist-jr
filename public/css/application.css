@@ -1,9 +1,27 @@
 .container {
   margin: 20px auto;
   width: 600px;
-  padding: 0px 20px 20px 20px;
+  padding: 20px 20px 20px 20px;
   border: 1px dotted black;
 }
 th {
   text-align: left;
+}
+
+form {
+  margin: auto;
+  width: 500px;
+  max-width: 100%;
+}
+
+input {
+  margin-top: 15px;
+  width: 500px;
+  max-width: 100%;
+}
+
+textarea {
+  margin-top: 15px;
+  width: 500px;
+  max-width: 100%;
 }
