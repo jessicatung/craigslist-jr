@@ -1,5 +1,5 @@
 get '/categories/?' do
-  @categories = Category.all
+  @categories = Category.all.order("id ASC")
   erb :"categories/index"
 end
 
